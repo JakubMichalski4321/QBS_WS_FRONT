@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-5"></div>
+  <div class="col-2 bg-light mt-5 rounded-2">
+    <div class="login text-center">
+      <h2>Login</h2><br>
+      <form class="needs-validation" method="post">
+
+        <div class="form-row">
+          <label for="username"><b>User Name</b></label>
+          <input [(ngModel)]="username" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="username" placeholder="Username" required>
+          <div class="invalid-feedback text-danger">Please provide username</div>
+        </div>
+        <br><br>
+
+        <div class="form-row">
+          <label for="password"><b>Password</b></label>
+          <input type="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Password" required>
+          <div class="invalid-feedback text-danger">Please provide password.</div>
+        </div>
+        <br><br>
+
+        <button *ngIf="username != '' && password != ''" class="btn btn-primary"  (click)="someMethod()">Log in</button>
+        <button *ngIf="username == '' || password == ''" class="btn btn-primary" disabled>Log in</button>
+        <br><br>
+
+        <div *ngIf="badLoginOrPasswordMessage!=''" class="text-danger fw-bold"><h3>{{badLoginOrPasswordMessage}}</h3><br><br></div>
+
+        <input type="checkbox" id="check">
+        <span>Remember me</span>
+
+        <br><br>
+        <a href="#">Forgot Password</a>
+      </form>
+    </div>
+    <div class="col-5"></div>
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
